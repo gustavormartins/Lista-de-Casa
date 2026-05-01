@@ -24,9 +24,10 @@ DB_PATH = BASE_DIR / "checklist.db"
 STATIC_DIR = FRONTEND_DIST_DIR if FRONTEND_DIST_DIR.exists() else FRONTEND_DIR
 
 app = FastAPI(title="Bia & Gustavo Checklist API", version="1.0.0")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://casanovabiaegustavo.up.railway.app"],
+    allow_origins=["https://casanovabiaegustavo.netlify.app", "http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
